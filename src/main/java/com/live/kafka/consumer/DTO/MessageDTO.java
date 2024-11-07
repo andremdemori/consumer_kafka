@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MessageDTO {
 
-    private String id;
-    private String mensagem;
+    private String uniqueID;
+    private String subject;
+    private String payload;
 }
