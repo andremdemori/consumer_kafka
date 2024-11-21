@@ -1,7 +1,6 @@
-package com.live.kafka.consumer.consumerConfig;
+package com.live.kafka.consumer.config;
 
 import com.live.kafka.consumer.DTO.MessageDTO;
-import com.live.kafka.consumer.config.KafkaConfig;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
