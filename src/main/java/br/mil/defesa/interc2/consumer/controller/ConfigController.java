@@ -1,6 +1,6 @@
-package com.live.kafka.consumer.controller;
+package br.mil.defesa.interc2.consumer.controller;
 
-import com.live.kafka.consumer.service.ConfigService;
+import br.mil.defesa.interc2.consumer.service.ConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

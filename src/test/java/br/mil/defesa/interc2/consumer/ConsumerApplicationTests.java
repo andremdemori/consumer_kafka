@@ -1,4 +1,4 @@
-package com.live.kafka.consumer;
+package br.mil.defesa.interc2.consumer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

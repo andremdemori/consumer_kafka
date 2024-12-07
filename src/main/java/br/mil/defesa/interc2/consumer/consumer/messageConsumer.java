@@ -1,7 +1,7 @@
-package com.live.kafka.consumer.consumer;
+package br.mil.defesa.interc2.consumer.consumer;
 
-import com.live.kafka.consumer.DTO.MessageDTO;
-import com.live.kafka.consumer.config.KafkaConfig;
+import br.mil.defesa.interc2.consumer.DTO.TgiMessage;
+import br.mil.defesa.interc2.consumer.config.KafkaConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +22,7 @@ public class messageConsumer {
                    groupId = "#{kafkaConfig.springKafkaGroupId}",
                    containerFactory = "messageKafkaListenerContainerFactory"
                   )
-    public void listenTopicMessage(ConsumerRecord<String, MessageDTO> record) {
+    public void listenTopicMessage(ConsumerRecord<String, TgiMessage> record) {
         logger.info("Received Message in partition " + record.partition());
         logger.info("Received Message: " + record.value());
 

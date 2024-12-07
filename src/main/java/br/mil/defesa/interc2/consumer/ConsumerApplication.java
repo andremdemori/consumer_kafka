@@ -1,4 +1,4 @@
-package com.live.kafka.consumer;
+package br.mil.defesa.interc2.consumer;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.SpringApplication;

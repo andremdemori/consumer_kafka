@@ -1,6 +1,6 @@
-package com.live.kafka.consumer.config;
+package br.mil.defesa.interc2.consumer.config;
 
-import com.live.kafka.consumer.DTO.MessageDTO;
+import br.mil.defesa.interc2.consumer.DTO.TgiMessage;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.context.annotation.Bean;
@@ -23,18 +23,18 @@ public class kafkaConsumerConfig {
     }
 
     @Bean
-    public ConsumerFactory<String, MessageDTO> messageConsumerFactory() {
+    public ConsumerFactory<String, TgiMessage> messageConsumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, kafkaConfig.getSpringKafkaBootstrapServers());
         props.put(ConsumerConfig.GROUP_ID_CONFIG, kafkaConfig.getSpringKafkaGroupId());
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, JsonDeserializer.class);
-        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(MessageDTO.class, false));
+        return new DefaultKafkaConsumerFactory<>(props, new StringDeserializer(), new JsonDeserializer<>(TgiMessage.class, false));
     }
 
     @Bean
-    public ConcurrentKafkaListenerContainerFactory<String, MessageDTO> messageKafkaListenerContainerFactory() {
-        ConcurrentKafkaListenerContainerFactory<String, MessageDTO> factory = new ConcurrentKafkaListenerContainerFactory<>();
+    public ConcurrentKafkaListenerContainerFactory<String, TgiMessage> messageKafkaListenerContainerFactory() {
+        ConcurrentKafkaListenerContainerFactory<String, TgiMessage> factory = new ConcurrentKafkaListenerContainerFactory<>();
         factory.setConsumerFactory(messageConsumerFactory());
         return factory;
     }

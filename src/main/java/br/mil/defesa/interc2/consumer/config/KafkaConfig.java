@@ -1,4 +1,4 @@
-package com.live.kafka.consumer.config;
+package br.mil.defesa.interc2.consumer.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

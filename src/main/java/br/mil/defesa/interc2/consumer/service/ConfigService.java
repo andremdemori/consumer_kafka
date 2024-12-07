@@ -1,6 +1,6 @@
-package com.live.kafka.consumer.service;
+package br.mil.defesa.interc2.consumer.service;
 
-import com.live.kafka.consumer.ConsumerApplication;
+import br.mil.defesa.interc2.consumer.ConsumerApplication;
 import org.springframework.stereotype.Service;
 
 @Service

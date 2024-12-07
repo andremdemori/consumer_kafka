@@ -1,13 +1,726 @@
-2024-12-06 01:00:52,421  INFO 101829 --- [main] c.l.kafka.consumer.ConsumerApplication   : Starting ConsumerApplication using Java 17.0.11 with PID 101829 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
-2024-12-06 01:00:52,429  INFO 101829 --- [main] c.l.kafka.consumer.ConsumerApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-12-06 01:00:53,228  INFO 101829 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
-2024-12-06 01:00:53,594  INFO 101829 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
-2024-12-06 01:00:53,606  INFO 101829 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-06 01:00:53,607  INFO 101829 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-12-06 01:00:53,700  INFO 101829 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-06 01:00:53,700  INFO 101829 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1204 ms
-2024-12-06 01:00:54,342  INFO 101829 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
-2024-12-06 01:00:54,411  INFO 101829 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+2024-12-07 00:15:01,589  INFO 171926 --- [main] b.m.d.i.consumer.ConsumerApplication     : Starting ConsumerApplication using Java 17.0.11 with PID 171926 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
+2024-12-07 00:15:01,596  INFO 171926 --- [main] b.m.d.i.consumer.ConsumerApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-12-07 00:15:02,409  INFO 171926 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
+2024-12-07 00:15:02,746  INFO 171926 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
+2024-12-07 00:15:02,756  INFO 171926 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-07 00:15:02,757  INFO 171926 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-12-07 00:15:02,851  INFO 171926 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-07 00:15:02,852  INFO 171926 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1198 ms
+2024-12-07 00:15:03,634  INFO 171926 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
+2024-12-07 00:15:03,806  INFO 171926 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [tcp://0.tcp.sa.ngrok.io:11492]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-mdlpbr2-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = mdlpbr2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-07 00:15:03,968  INFO 171926 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-12-07 00:15:03,969  INFO 171926 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-12-07 00:15:03,970  INFO 171926 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733541303966
+2024-12-07 00:15:03,974  INFO 171926 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
+2024-12-07 00:15:03,993  INFO 171926 --- [main] b.m.d.i.consumer.ConsumerApplication     : Started ConsumerApplication in 2.939 seconds (process running for 3.363)
+2024-12-07 00:15:04,358  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:15:04,359  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:15:04,359  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:15:04,361  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: 5NoOP8mvS_K7Ld4uxbFmQA
+2024-12-07 00:15:04,362  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null)
+2024-12-07 00:15:04,364  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:15:04,467  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-b179631f-267d-4d36-96f1-4b5fede65236
+2024-12-07 00:15:04,468  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-12-07 00:15:04,468  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:15:06,851  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-b179631f-267d-4d36-96f1-4b5fede65236 sending LeaveGroup request to coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2024-12-07 00:15:06,853  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:15:06,853  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:15:06,853  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
+2024-12-07 00:15:06,854  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:15:06,855  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:15:07,623  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-12-07 00:15:07,624  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-07 00:15:07,624  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-12-07 00:15:07,633  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-mdlpbr2-1 unregistered
+2024-12-07 00:15:07,634  INFO 171926 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: Consumer stopped
+2024-12-07 00:18:08,764  INFO 172171 --- [main] b.m.d.i.consumer.ConsumerApplication     : Starting ConsumerApplication using Java 17.0.11 with PID 172171 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
+2024-12-07 00:18:08,767  INFO 172171 --- [main] b.m.d.i.consumer.ConsumerApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-12-07 00:18:09,519  INFO 172171 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
+2024-12-07 00:18:09,849  INFO 172171 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
+2024-12-07 00:18:09,859  INFO 172171 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-07 00:18:09,860  INFO 172171 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-12-07 00:18:09,949  INFO 172171 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-07 00:18:09,949  INFO 172171 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1117 ms
+2024-12-07 00:18:10,594  INFO 172171 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
+2024-12-07 00:18:10,766  INFO 172171 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [tcp://0.tcp.sa.ngrok.io:11492]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-mdlpbr2-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = mdlpbr2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-07 00:18:10,912  INFO 172171 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-12-07 00:18:10,914  INFO 172171 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-12-07 00:18:10,914  INFO 172171 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733541490911
+2024-12-07 00:18:10,918  INFO 172171 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
+2024-12-07 00:18:10,940  INFO 172171 --- [main] b.m.d.i.consumer.ConsumerApplication     : Started ConsumerApplication in 2.681 seconds (process running for 3.047)
+2024-12-07 00:18:11,258  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:18:11,258  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:18:11,258  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:18:11,260  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: 5NoOP8mvS_K7Ld4uxbFmQA
+2024-12-07 00:18:11,261  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null)
+2024-12-07 00:18:11,263  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:18:11,354  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-be8c923d-c284-4204-bfc4-33cab1687b6b
+2024-12-07 00:18:11,354  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-12-07 00:18:11,355  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:18:14,454  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-be8c923d-c284-4204-bfc4-33cab1687b6b sending LeaveGroup request to coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2024-12-07 00:18:14,456  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:18:14,457  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:18:14,457  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
+2024-12-07 00:18:14,457  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:18:14,458  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:18:14,506  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-12-07 00:18:14,506  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-07 00:18:14,507  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-12-07 00:18:14,511  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-mdlpbr2-1 unregistered
+2024-12-07 00:18:14,511  INFO 172171 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: Consumer stopped
+2024-12-07 00:20:20,338  INFO 172342 --- [main] b.m.d.i.consumer.ConsumerApplication     : Starting ConsumerApplication using Java 17.0.11 with PID 172342 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
+2024-12-07 00:20:20,341  INFO 172342 --- [main] b.m.d.i.consumer.ConsumerApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-12-07 00:20:21,094  INFO 172342 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
+2024-12-07 00:20:21,390  INFO 172342 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
+2024-12-07 00:20:21,399  INFO 172342 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-07 00:20:21,400  INFO 172342 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-12-07 00:20:21,487  INFO 172342 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-07 00:20:21,488  INFO 172342 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1078 ms
+2024-12-07 00:20:22,104  INFO 172342 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
+2024-12-07 00:20:22,153  INFO 172342 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [tcp://0.tcp.sa.ngrok.io:11492]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-mdlpbr2-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = mdlpbr2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-07 00:20:22,308  INFO 172342 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-12-07 00:20:22,310  INFO 172342 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-12-07 00:20:22,310  INFO 172342 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733541622307
+2024-12-07 00:20:22,313  INFO 172342 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
+2024-12-07 00:20:22,334  INFO 172342 --- [main] b.m.d.i.consumer.ConsumerApplication     : Started ConsumerApplication in 2.51 seconds (process running for 2.884)
+2024-12-07 00:20:22,637  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:20:22,638  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:20:22,638  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:20:22,640  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: 5NoOP8mvS_K7Ld4uxbFmQA
+2024-12-07 00:20:22,641  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null)
+2024-12-07 00:20:22,643  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:20:22,729  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-f3cb91bc-6829-494d-9727-544b5ddd29f9
+2024-12-07 00:20:22,730  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-12-07 00:20:22,730  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:20:25,036  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-f3cb91bc-6829-494d-9727-544b5ddd29f9 sending LeaveGroup request to coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2024-12-07 00:20:25,038  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:20:25,038  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:20:25,039  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
+2024-12-07 00:20:25,040  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:20:25,040  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:20:25,782  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-12-07 00:20:25,783  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-07 00:20:25,783  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-12-07 00:20:25,792  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-mdlpbr2-1 unregistered
+2024-12-07 00:20:25,793  INFO 172342 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: Consumer stopped
+2024-12-07 00:28:23,383  INFO 173136 --- [main] b.m.d.i.consumer.ConsumerApplication     : Starting ConsumerApplication using Java 17.0.11 with PID 173136 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
+2024-12-07 00:28:23,385  INFO 173136 --- [main] b.m.d.i.consumer.ConsumerApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-12-07 00:28:24,115  INFO 173136 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
+2024-12-07 00:28:24,471  INFO 173136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
+2024-12-07 00:28:24,484  INFO 173136 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-07 00:28:24,484  INFO 173136 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-12-07 00:28:24,574  INFO 173136 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-07 00:28:24,574  INFO 173136 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1117 ms
+2024-12-07 00:28:25,207  INFO 173136 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
+2024-12-07 00:28:25,290  INFO 173136 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [tcp://0.tcp.sa.ngrok.io:11492]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-mdlpbr2-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = mdlpbr2
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2024-12-07 00:28:25,429  INFO 173136 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-12-07 00:28:25,430  INFO 173136 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-12-07 00:28:25,431  INFO 173136 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733542105427
+2024-12-07 00:28:25,435  INFO 173136 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
+2024-12-07 00:28:25,459  INFO 173136 --- [main] b.m.d.i.consumer.ConsumerApplication     : Started ConsumerApplication in 2.674 seconds (process running for 3.048)
+2024-12-07 00:28:25,803  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:28:25,804  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:28:25,804  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to xqDgdNqwTU6EhNbChnvMNA
+2024-12-07 00:28:25,806  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: 5NoOP8mvS_K7Ld4uxbFmQA
+2024-12-07 00:28:25,807  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null)
+2024-12-07 00:28:25,809  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:28:25,898  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-f84062e6-c6d6-4848-93f6-4e3b15f725dd
+2024-12-07 00:28:25,899  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-12-07 00:28:25,899  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:28:29,009  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully joined group with generation Generation{generationId=45, memberId='consumer-mdlpbr2-1-f84062e6-c6d6-4848-93f6-4e3b15f725dd', protocol='range'}
+2024-12-07 00:28:29,012  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Finished assignment for group at generation 45: {consumer-mdlpbr2-1-f84062e6-c6d6-4848-93f6-4e3b15f725dd=Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])}
+2024-12-07 00:28:29,054  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully synced group in generation Generation{generationId=45, memberId='consumer-mdlpbr2-1-f84062e6-c6d6-4848-93f6-4e3b15f725dd', protocol='range'}
+2024-12-07 00:28:29,055  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Notifying assignor about the new Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])
+2024-12-07 00:28:29,059  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Adding newly assigned partitions: mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
+2024-12-07 00:28:29,147  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-2 to the committed offset FetchPosition{offset=12, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[0.tcp.sa.ngrok.io:11492 (id: 1 rack: null)], epoch=0}}
+2024-12-07 00:28:29,148  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-1 to the committed offset FetchPosition{offset=7, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[0.tcp.sa.ngrok.io:11492 (id: 1 rack: null)], epoch=0}}
+2024-12-07 00:28:29,148  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-0 to the committed offset FetchPosition{offset=6, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[0.tcp.sa.ngrok.io:11492 (id: 1 rack: null)], epoch=0}}
+2024-12-07 00:28:29,251  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions assigned: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
+2024-12-07 00:28:29,444  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,446  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=b425b8ad-dbb1-4f3e-8f80-c5b175abc7e7, subject=AUTORIDADE EMCFA, payload=BZ]
+2024-12-07 00:28:29,446  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=366d2d97-8906-4602-a09b-4a5f02ec2b41, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=4a87b4b6-ac1c-4b4d-8556-2779a25cd6aa, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=7969c326-a970-4016-ae84-985e6e693701, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=0607ce36-7939-4dc2-b715-07089c375496, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=480b3efd-8371-4806-b9d4-ddbccca1545f, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,447  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=40b46475-5ade-4799-89ea-1c533123e19f, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=aea94ab0-7196-4061-a5df-5488529850c5, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=c1f4a7c1-6ae9-40b4-8a58-8b6cbabc57a8, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=d399af19-2394-4591-bd9e-7e0976aaaf24, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=2c9efdf7-781f-4f74-96cc-d0570a63a595, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e3bde5bf-bbba-440c-80c1-cf4b0f7dc33e, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=8bbb938e-5bb4-489d-9d05-ab67e8eea24f, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,448  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=3d5afd57-efac-4e4e-93fa-8da92ad14805, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=5541ed08-800f-4c98-84d7-d0319106c0e1, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=fbba8d28-c64a-48e1-9994-0fa590b6ab18, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=4da3521e-21a0-4f22-ae05-6b82a32d5ad8, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,449  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=70518f95-08ab-4332-bd69-fa11e9b0e8d5, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=7fd9c859-01fe-434d-a643-add3a21765d6, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=7bbb58a4-c139-44a8-84f7-d0f917cfabd1, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=40d1eb00-267d-4bd2-b3b3-b0b03a1bf474, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 0
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=ea772eb1-c012-4c13-af9a-0b971e202c31, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=3e12a632-4271-486d-8daa-aa34c9cdb469, subject=AUTORIDADE EMCFA, payload=BZ]
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=33, subject=Piloto do caça, payload=Alvo abatido]
+2024-12-07 00:28:29,450  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=33, subject=Piloto do caça, payload=Alvo abatido]
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=33, subject=Piloto do caça, payload=Alvo abatido]
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=33, subject=Piloto do caça, payload=Alvo abatido]
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=33, subject=Piloto do caça, payload=Alvo abatido]
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=33, subject=Piloto do caça, payload=Alvo abatido]
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=33, subject=Piloto do caça, payload=Alvo abatido]
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,451  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=b7b5f654-ce6c-4308-bbce-3ead828ddebe, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=7a3550dd-82aa-4acb-8809-041cf6b7456b, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=69f85377-775e-440d-ae99-26fc6d634795, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=81938730-ab7f-45a4-b566-23ba4f031cf0, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=80c32a61-7ccc-40cf-826f-a143bee2a3f6, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=c05f4f40-79ef-4a40-8712-3a13f5efa2b8, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,452  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=2b4c7980-6bf1-4c19-83b0-09c936ae6529, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=2a1ecbba-61ef-4f33-ad4d-738a26b8c1bf, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=2144356f-b2d0-416c-8a32-fb87df286c99, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=dde48bb0-1aed-461e-a9ee-4cb8f55b0508, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=a634b7be-1fcc-47db-9996-ceb8db2fb4f8, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=00e7908f-3ed1-4af7-8256-0a4027a72a3d, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=37e1dff9-f9a9-4246-8759-bea8070d2b39, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=a12508d9-2b5f-4a8d-85b6-032975f30d77, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=a6d2da41-0c22-4060-8e43-6ef1e25e2891, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,453  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=78483bd0-3f9e-4f61-be82-9f6baca69220, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=5184d59c-e37e-4d97-9e3a-91e7c4ecf36d, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=fc6c09d9-fc45-4d17-ae5a-99593abeef35, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=924dfc7d-398c-4780-b1ed-01d7b6c9d5fc, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e93c7ab3-527f-4ae7-b496-501683a7ad1c, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=a91251bd-3f53-44b1-9453-ba54c13d6280, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=790a698c-97f8-4bbc-be38-93411fd947da, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=9e7dc1b0-1761-4231-90ea-6360e5e29b40, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=15d171c2-0ad8-4bbd-820f-212626691778, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=74af397b-d43e-4580-ac8b-4f6a7ecfc1f1, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,454  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=286e306a-b353-4000-9748-9d45440cd35e, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=f45f1a21-9df2-4fca-9042-5a01ecd1cbda, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=cd2560f2-dbf9-4974-8873-ec44b111656d, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=58b60803-49e7-438a-9b15-8aad27e15ca7, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=cb769fbe-8aff-42a6-955e-b0e0f3873022, subject=AUTORIDADE EMCFA, payload=BZ]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=72771203-57a8-4fb0-8083-8c78e1238da6, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=eb576c14-6928-46a4-8486-6626f6e1294c, subject=AUTORIDADE EMCFA, payload=BZ]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=2d786a91-e788-4d49-9401-ff661a294e3a, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,455  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=27f22435-8908-4dad-a788-5fac95a14dab, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=00473bf6-fe1a-4354-b3f4-fb398184a0d4, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=c37d326c-facd-4340-8b3d-671189928f26, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=45d05b2c-0df5-4d98-b791-abb1834a2a66, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=63b5bb95-0daa-46de-a09d-712ba9f4369b, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=d5ca5633-6fd8-450a-bad0-2179817c7ec8, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=0a356dc1-91cf-4629-9984-c33eb68f2655, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=2e09301d-12fd-4272-848a-cab98c4de8be, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=b956b4db-0709-4bcd-89d3-3baacfb2f845, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,456  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e700efd5-3eb7-44cd-8b8e-183daae7b8b9, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=dd24cb70-27fa-4caf-96f5-659c8b9d0dbd, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e713133b-41e4-4c0d-be15-590e55d6a77e, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=786d2496-bfb8-4094-9236-13763e45a064, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=1d227feb-f6a3-4b6f-a61d-55c49d0b50bf, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e38adfc3-5d40-438b-99a8-99584de114d6, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=4a763db4-a0ae-4cad-9d50-a84ce03a8a6a, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=dd7e9197-7ebf-44d3-ab4d-c40145c1daeb, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,457  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=8a56a625-cf52-42fb-8ab3-63516ead3b0a, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=4e904003-74aa-423f-8ecc-31dea10668e7, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=ee1c90cd-5085-4aba-a07e-d1fe9a755d61, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=5fd2a9f6-e576-48d7-bcad-8110484cde0c, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=de99a658-e494-4013-839c-c6c3b7e86e52, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=229ec4a9-4a04-4835-a141-03d205ffaf56, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=7a785ae1-fa97-4647-a95f-11b357f9019f, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=3c43450e-804a-4e54-b08f-9acee7bc8e58, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e94460ff-f9e3-4185-a256-bc2e085a08af, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,458  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=c7d9b697-564a-422e-88ff-8386a2ebcfc2, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e157ad23-4ffd-4b70-bf31-2f0ac77d45f5, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=402c9679-ee4b-4cf4-a0f0-fa8782ac97fc, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=a7b75639-a379-4ced-b4db-a5d388b1ab97, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=c9382407-557e-4986-b556-808fc4fda816, subject=AUTORIDADE EMCFA, payload=ATACAR ALVO BT]
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:28:29,459  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=9a21f304-3fcf-4a0f-b5e0-db4061986e64, subject=AUTORIDADE EMCFA, payload=BZ]
+2024-12-07 00:30:15,887  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Revoke previously assigned partitions mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
+2024-12-07 00:30:15,888  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions revoked: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
+2024-12-07 00:30:15,889  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-f84062e6-c6d6-4848-93f6-4e3b15f725dd sending LeaveGroup request to coordinator 0.tcp.sa.ngrok.io:11492 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2024-12-07 00:30:15,891  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:30:15,891  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:30:15,891  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
+2024-12-07 00:30:15,892  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:30:15,892  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:30:15,928  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-12-07 00:30:15,929  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-07 00:30:15,929  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-12-07 00:30:15,938  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-mdlpbr2-1 unregistered
+2024-12-07 00:30:15,939  INFO 173136 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: Consumer stopped
+2024-12-07 00:30:20,523  INFO 173337 --- [main] b.m.d.i.consumer.ConsumerApplication     : Starting ConsumerApplication using Java 17.0.11 with PID 173337 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
+2024-12-07 00:30:20,526  INFO 173337 --- [main] b.m.d.i.consumer.ConsumerApplication     : No active profile set, falling back to 1 default profile: "default"
+2024-12-07 00:30:21,402  INFO 173337 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
+2024-12-07 00:30:21,700  INFO 173337 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
+2024-12-07 00:30:21,710  INFO 173337 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-12-07 00:30:21,710  INFO 173337 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
+2024-12-07 00:30:21,798  INFO 173337 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-12-07 00:30:21,798  INFO 173337 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1207 ms
+2024-12-07 00:30:22,469  INFO 173337 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
+2024-12-07 00:30:22,538  INFO 173337 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
 	allow.auto.create.topics = true
 	auto.commit.interval.ms = 5000
 	auto.include.jmx.reporter = true
@@ -101,361 +814,43 @@
 	ssl.truststore.type = JKS
 	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
 
-2024-12-06 01:00:54,522  INFO 101829 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-12-06 01:00:54,523  INFO 101829 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-12-06 01:00:54,523  INFO 101829 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733457654521
-2024-12-06 01:00:54,527  INFO 101829 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
-2024-12-06 01:00:54,548  INFO 101829 --- [main] c.l.kafka.consumer.ConsumerApplication   : Started ConsumerApplication in 2.703 seconds (process running for 3.093)
-2024-12-06 01:00:55,237  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 01:00:55,238  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 01:00:55,239  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 01:00:55,242  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: IEXiwyT8RWujNSgK6mq9-w
-2024-12-06 01:00:55,244  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 54.196.138.162:8080 (id: 2147483647 rack: null)
-2024-12-06 01:00:55,247  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
-2024-12-06 01:00:55,618  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-db09e7db-7a73-40ba-af67-6017b69e0584
-2024-12-06 01:00:55,619  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
-2024-12-06 01:00:55,620  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
-2024-12-06 01:00:55,747  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully joined group with generation Generation{generationId=1, memberId='consumer-mdlpbr2-1-db09e7db-7a73-40ba-af67-6017b69e0584', protocol='range'}
-2024-12-06 01:00:55,750  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Finished assignment for group at generation 1: {consumer-mdlpbr2-1-db09e7db-7a73-40ba-af67-6017b69e0584=Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])}
-2024-12-06 01:00:55,880  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully synced group in generation Generation{generationId=1, memberId='consumer-mdlpbr2-1-db09e7db-7a73-40ba-af67-6017b69e0584', protocol='range'}
-2024-12-06 01:00:55,881  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Notifying assignor about the new Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])
-2024-12-06 01:00:55,884  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Adding newly assigned partitions: mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
-2024-12-06 01:00:56,023  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Found no committed offset for partition mdlpbr2Tgi-0
-2024-12-06 01:00:56,023  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Found no committed offset for partition mdlpbr2Tgi-2
-2024-12-06 01:00:56,023  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Found no committed offset for partition mdlpbr2Tgi-1
-2024-12-06 01:00:56,242  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Found no committed offset for partition mdlpbr2Tgi-0
-2024-12-06 01:00:56,243  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Found no committed offset for partition mdlpbr2Tgi-2
-2024-12-06 01:00:56,243  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Found no committed offset for partition mdlpbr2Tgi-1
-2024-12-06 01:00:56,627  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting offset for partition mdlpbr2Tgi-0 to position FetchPosition{offset=14, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}.
-2024-12-06 01:00:56,628  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting offset for partition mdlpbr2Tgi-2 to position FetchPosition{offset=20, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}.
-2024-12-06 01:00:56,629  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.SubscriptionState    : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting offset for partition mdlpbr2Tgi-1 to position FetchPosition{offset=14, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}.
-2024-12-06 01:00:56,772  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions assigned: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
-2024-12-06 01:01:51,607  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 01:01:51,607  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=ba05bcdf-fb73-4a66-acfc-99b089f7e5ab, subject=teste de comunicação, payload=teste de comunicação )
-2024-12-06 01:01:55,434  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 2
-2024-12-06 01:01:55,434  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=2d9b313e-16cf-47ca-9f7b-d7201e498159, subject=teste de comunicação, payload=teste de comunicação )
-2024-12-06 01:02:02,444  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Revoke previously assigned partitions mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
-2024-12-06 01:02:02,445  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions revoked: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
-2024-12-06 01:02:02,447  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-db09e7db-7a73-40ba-af67-6017b69e0584 sending LeaveGroup request to coordinator 54.196.138.162:8080 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
-2024-12-06 01:02:02,449  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
-2024-12-06 01:02:02,449  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
-2024-12-06 01:02:02,449  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
-2024-12-06 01:02:02,450  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
-2024-12-06 01:02:02,451  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
-2024-12-06 01:02:02,583  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2024-12-06 01:02:02,583  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2024-12-06 01:02:02,583  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2024-12-06 01:02:02,587  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-mdlpbr2-1 unregistered
-2024-12-06 01:02:02,588  INFO 101829 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: Consumer stopped
-2024-12-06 01:30:08,351  INFO 103737 --- [main] c.l.kafka.consumer.ConsumerApplication   : Starting ConsumerApplication using Java 17.0.11 with PID 103737 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
-2024-12-06 01:30:08,355  INFO 103737 --- [main] c.l.kafka.consumer.ConsumerApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-12-06 01:30:09,602  INFO 103737 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
-2024-12-06 01:30:10,110  INFO 103737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
-2024-12-06 01:30:10,126  INFO 103737 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-06 01:30:10,126  INFO 103737 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-12-06 01:30:10,287  INFO 103737 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-06 01:30:10,287  INFO 103737 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1837 ms
-2024-12-06 01:30:11,352  INFO 103737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
-2024-12-06 01:30:11,421  INFO 103737 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
-	allow.auto.create.topics = true
-	auto.commit.interval.ms = 5000
-	auto.include.jmx.reporter = true
-	auto.offset.reset = latest
-	bootstrap.servers = [54.196.138.162:8080]
-	check.crcs = true
-	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-mdlpbr2-1
-	client.rack = 
-	connections.max.idle.ms = 540000
-	default.api.timeout.ms = 60000
-	enable.auto.commit = false
-	exclude.internal.topics = true
-	fetch.max.bytes = 52428800
-	fetch.max.wait.ms = 500
-	fetch.min.bytes = 1
-	group.id = mdlpbr2
-	group.instance.id = null
-	heartbeat.interval.ms = 3000
-	interceptor.classes = []
-	internal.leave.group.on.close = true
-	internal.throw.on.fetch.stable.offset.unsupported = false
-	isolation.level = read_uncommitted
-	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-	max.partition.fetch.bytes = 1048576
-	max.poll.interval.ms = 300000
-	max.poll.records = 500
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	session.timeout.ms = 45000
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
-
-2024-12-06 01:30:11,580  INFO 103737 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-12-06 01:30:11,583  INFO 103737 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-12-06 01:30:11,583  INFO 103737 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733459411578
-2024-12-06 01:30:11,588  INFO 103737 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
-2024-12-06 01:30:11,623  INFO 103737 --- [main] c.l.kafka.consumer.ConsumerApplication   : Started ConsumerApplication in 4.032 seconds (process running for 4.524)
-2024-12-06 01:30:12,419  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 01:30:12,421  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 01:30:12,421  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 01:30:12,423  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: IEXiwyT8RWujNSgK6mq9-w
-2024-12-06 01:30:12,425  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 54.196.138.162:8080 (id: 2147483647 rack: null)
-2024-12-06 01:30:12,427  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
-2024-12-06 01:30:12,798  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-4d7642f1-0d6e-4e26-987d-d3d42767456b
-2024-12-06 01:30:12,799  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
-2024-12-06 01:30:12,799  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
-2024-12-06 01:30:12,923  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully joined group with generation Generation{generationId=3, memberId='consumer-mdlpbr2-1-4d7642f1-0d6e-4e26-987d-d3d42767456b', protocol='range'}
-2024-12-06 01:30:12,926  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Finished assignment for group at generation 3: {consumer-mdlpbr2-1-4d7642f1-0d6e-4e26-987d-d3d42767456b=Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])}
-2024-12-06 01:30:13,052  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully synced group in generation Generation{generationId=3, memberId='consumer-mdlpbr2-1-4d7642f1-0d6e-4e26-987d-d3d42767456b', protocol='range'}
-2024-12-06 01:30:13,054  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Notifying assignor about the new Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])
-2024-12-06 01:30:13,057  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Adding newly assigned partitions: mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
-2024-12-06 01:30:13,330  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-2 to the committed offset FetchPosition{offset=21, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
-2024-12-06 01:30:13,333  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-1 to the committed offset FetchPosition{offset=15, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
-2024-12-06 01:30:13,334  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-0 to the committed offset FetchPosition{offset=14, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
-2024-12-06 01:30:13,437  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions assigned: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
-2024-12-06 01:30:13,894  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 01:30:13,895  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=2dec9d84-b98c-47bd-b476-a4751f194740, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ)
-2024-12-06 01:30:13,896  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 01:30:13,897  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=ccf47781-d088-47fd-9051-99cf2d7ee0b4, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ)
-2024-12-06 01:30:13,898  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 2
-2024-12-06 01:30:13,898  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=9a7575bc-b123-494a-912d-68fc31808961, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - FIM DO DIA)
-2024-12-06 01:30:48,065  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Revoke previously assigned partitions mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
-2024-12-06 01:30:48,066  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions revoked: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
-2024-12-06 01:30:48,067  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-4d7642f1-0d6e-4e26-987d-d3d42767456b sending LeaveGroup request to coordinator 54.196.138.162:8080 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
-2024-12-06 01:30:48,068  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
-2024-12-06 01:30:48,068  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
-2024-12-06 01:30:48,068  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
-2024-12-06 01:30:48,069  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
-2024-12-06 01:30:48,069  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
-2024-12-06 01:30:48,227  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
-2024-12-06 01:30:48,227  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
-2024-12-06 01:30:48,227  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
-2024-12-06 01:30:48,232  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-mdlpbr2-1 unregistered
-2024-12-06 01:30:48,233  INFO 103737 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: Consumer stopped
-2024-12-06 10:53:26,040  INFO 112427 --- [main] c.l.kafka.consumer.ConsumerApplication   : Starting ConsumerApplication using Java 17.0.11 with PID 112427 (/home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer/target/classes started by demori in /home/demori/spring_ws/kafka_e_RabbitMQ/kafka/consumer)
-2024-12-06 10:53:26,043  INFO 112427 --- [main] c.l.kafka.consumer.ConsumerApplication   : No active profile set, falling back to 1 default profile: "default"
-2024-12-06 10:53:26,988  INFO 112427 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=acea681e-00d8-3a04-8bfe-560fbd1e9514
-2024-12-06 10:53:27,447  INFO 112427 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 10003 (http)
-2024-12-06 10:53:27,460  INFO 112427 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-12-06 10:53:27,460  INFO 112427 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.15]
-2024-12-06 10:53:27,587  INFO 112427 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-12-06 10:53:27,588  INFO 112427 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1470 ms
-2024-12-06 10:53:28,352  INFO 112427 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 10003 (http) with context path ''
-2024-12-06 10:53:28,406  INFO 112427 --- [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
-	allow.auto.create.topics = true
-	auto.commit.interval.ms = 5000
-	auto.include.jmx.reporter = true
-	auto.offset.reset = latest
-	bootstrap.servers = [54.196.138.162:8080]
-	check.crcs = true
-	client.dns.lookup = use_all_dns_ips
-	client.id = consumer-mdlpbr2-1
-	client.rack = 
-	connections.max.idle.ms = 540000
-	default.api.timeout.ms = 60000
-	enable.auto.commit = false
-	exclude.internal.topics = true
-	fetch.max.bytes = 52428800
-	fetch.max.wait.ms = 500
-	fetch.min.bytes = 1
-	group.id = mdlpbr2
-	group.instance.id = null
-	heartbeat.interval.ms = 3000
-	interceptor.classes = []
-	internal.leave.group.on.close = true
-	internal.throw.on.fetch.stable.offset.unsupported = false
-	isolation.level = read_uncommitted
-	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
-	max.partition.fetch.bytes = 1048576
-	max.poll.interval.ms = 300000
-	max.poll.records = 500
-	metadata.max.age.ms = 300000
-	metric.reporters = []
-	metrics.num.samples = 2
-	metrics.recording.level = INFO
-	metrics.sample.window.ms = 30000
-	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
-	receive.buffer.bytes = 65536
-	reconnect.backoff.max.ms = 1000
-	reconnect.backoff.ms = 50
-	request.timeout.ms = 30000
-	retry.backoff.ms = 100
-	sasl.client.callback.handler.class = null
-	sasl.jaas.config = null
-	sasl.kerberos.kinit.cmd = /usr/bin/kinit
-	sasl.kerberos.min.time.before.relogin = 60000
-	sasl.kerberos.service.name = null
-	sasl.kerberos.ticket.renew.jitter = 0.05
-	sasl.kerberos.ticket.renew.window.factor = 0.8
-	sasl.login.callback.handler.class = null
-	sasl.login.class = null
-	sasl.login.connect.timeout.ms = null
-	sasl.login.read.timeout.ms = null
-	sasl.login.refresh.buffer.seconds = 300
-	sasl.login.refresh.min.period.seconds = 60
-	sasl.login.refresh.window.factor = 0.8
-	sasl.login.refresh.window.jitter = 0.05
-	sasl.login.retry.backoff.max.ms = 10000
-	sasl.login.retry.backoff.ms = 100
-	sasl.mechanism = GSSAPI
-	sasl.oauthbearer.clock.skew.seconds = 30
-	sasl.oauthbearer.expected.audience = null
-	sasl.oauthbearer.expected.issuer = null
-	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
-	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
-	sasl.oauthbearer.jwks.endpoint.url = null
-	sasl.oauthbearer.scope.claim.name = scope
-	sasl.oauthbearer.sub.claim.name = sub
-	sasl.oauthbearer.token.endpoint.url = null
-	security.protocol = PLAINTEXT
-	security.providers = null
-	send.buffer.bytes = 131072
-	session.timeout.ms = 45000
-	socket.connection.setup.timeout.max.ms = 30000
-	socket.connection.setup.timeout.ms = 10000
-	ssl.cipher.suites = null
-	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
-	ssl.endpoint.identification.algorithm = https
-	ssl.engine.factory.class = null
-	ssl.key.password = null
-	ssl.keymanager.algorithm = SunX509
-	ssl.keystore.certificate.chain = null
-	ssl.keystore.key = null
-	ssl.keystore.location = null
-	ssl.keystore.password = null
-	ssl.keystore.type = JKS
-	ssl.protocol = TLSv1.3
-	ssl.provider = null
-	ssl.secure.random.implementation = null
-	ssl.trustmanager.algorithm = PKIX
-	ssl.truststore.certificates = null
-	ssl.truststore.location = null
-	ssl.truststore.password = null
-	ssl.truststore.type = JKS
-	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
-
-2024-12-06 10:53:28,538  INFO 112427 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
-2024-12-06 10:53:28,539  INFO 112427 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
-2024-12-06 10:53:28,539  INFO 112427 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733493208537
-2024-12-06 10:53:28,541  INFO 112427 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
-2024-12-06 10:53:28,560  INFO 112427 --- [main] c.l.kafka.consumer.ConsumerApplication   : Started ConsumerApplication in 3.126 seconds (process running for 3.578)
-2024-12-06 10:53:29,300  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 10:53:29,301  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 10:53:29,302  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
-2024-12-06 10:53:29,306  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: IEXiwyT8RWujNSgK6mq9-w
-2024-12-06 10:53:29,308  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 54.196.138.162:8080 (id: 2147483647 rack: null)
-2024-12-06 10:53:29,311  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
-2024-12-06 10:53:29,811  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-63f499c0-b4c6-4ade-b38c-d5b6b9f155e6
-2024-12-06 10:53:29,813  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
-2024-12-06 10:53:29,813  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
-2024-12-06 10:53:29,972  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully joined group with generation Generation{generationId=10, memberId='consumer-mdlpbr2-1-63f499c0-b4c6-4ade-b38c-d5b6b9f155e6', protocol='range'}
-2024-12-06 10:53:29,976  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Finished assignment for group at generation 10: {consumer-mdlpbr2-1-63f499c0-b4c6-4ade-b38c-d5b6b9f155e6=Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])}
-2024-12-06 10:53:30,135  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully synced group in generation Generation{generationId=10, memberId='consumer-mdlpbr2-1-63f499c0-b4c6-4ade-b38c-d5b6b9f155e6', protocol='range'}
-2024-12-06 10:53:30,139  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Notifying assignor about the new Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])
-2024-12-06 10:53:30,143  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Adding newly assigned partitions: mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
-2024-12-06 10:53:30,492  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-2 to the committed offset FetchPosition{offset=22, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
-2024-12-06 10:53:30,493  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-1 to the committed offset FetchPosition{offset=15, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
-2024-12-06 10:53:30,494  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-0 to the committed offset FetchPosition{offset=16, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
-2024-12-06 10:53:30,497  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions assigned: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
-2024-12-06 10:53:31,081  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 10:53:31,081  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=88140239-d60f-4ed5-b16e-fdf294231bed, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - FIM DO DIA)
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=95c3ce86-9311-4257-b071-1d26458d3006, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=0db5e397-91f7-491d-8b39-6f30fcbe1d07, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=f63f7c8e-4905-492b-99fc-0005faa73d2d, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=dae2094a-0456-4080-9e11-c782ddd20423, subject=teste de comunicação, payload=teste de comunicação )
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 2
-2024-12-06 10:53:31,082  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=1be7b06d-4e61-4d2c-b106-580cb9473013, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 2
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=b4988716-7ad5-4341-949d-4518d4312428, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 2
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=2c3afc98-5619-49bb-abc4-6976d2b8c65a, subject=ANDERSON FERREIRA, payload=BOM DIA - EXERCICIO INTEGRACAO RUI ANDRE ANDERSON- INICIO SEXTA!)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=a64b5d43-4ec1-4731-8b61-1fc2e5ce4a1f, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - FIM DO DIA)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=4ae0160d-1a3d-4927-9667-840b9d872705, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - FIM DO DIA!)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=fe8b1e15-6add-482f-bbfe-d432ac693bce, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=9733c0f5-6c60-494e-94c2-3ea169c52426, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=f85f6c44-0865-4d1d-aabd-23f4eb5c0e19, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 10:53:31,083  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=f26be757-d64e-4b53-8518-22aaa62d7169, subject=ANDERSON FERREIRA, payload=BOA NOITE FROM VM HOST LINUX DE CAMPO GRANDE RJ - INICIO SEXTA!)
-2024-12-06 10:53:31,084  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 1
-2024-12-06 10:53:31,084  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=736b49a4-af88-4fff-9979-8f44ded328b1, subject=teste de comunicação, payload=teste de comunicação )
-2024-12-06 10:58:14,738  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message in partition 0
-2024-12-06 10:58:14,738  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.l.k.consumer.consumer.messageConsumer  : Received Message: MessageDTO(uniqueID=b61da52d-3c9e-4910-a764-286bbd3e73e2, subject=ANDERSON FERREIRA, payload=INSTANCIA LOCAL DE KAFKA NO 7o)
-2024-12-06 11:02:29,331  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.NetworkClient   : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Node -1 disconnected.
-2024-12-06 11:08:58,585  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Revoke previously assigned partitions mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
-2024-12-06 11:08:58,586  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions revoked: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
-2024-12-06 11:08:58,587  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-63f499c0-b4c6-4ade-b38c-d5b6b9f155e6 sending LeaveGroup request to coordinator 54.196.138.162:8080 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
-2024-12-06 11:08:58,588  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
-2024-12-06 11:08:58,589  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
-2024-12-06 11:08:58,589  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
-2024-12-06 11:08:58,589  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
-2024-12-06 11:08:58,589  INFO 112427 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:30:22,642  INFO 173337 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.4.1
+2024-12-07 00:30:22,643  INFO 173337 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: 8a516edc2755df89
+2024-12-07 00:30:22,644  INFO 173337 --- [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1733542222641
+2024-12-07 00:30:22,646  INFO 173337 --- [main] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Subscribed to topic(s): mdlpbr2Tgi
+2024-12-07 00:30:22,665  INFO 173337 --- [main] b.m.d.i.consumer.ConsumerApplication     : Started ConsumerApplication in 2.745 seconds (process running for 3.094)
+2024-12-07 00:30:23,398  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-0 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
+2024-12-07 00:30:23,399  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-2 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
+2024-12-07 00:30:23,399  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting the last seen epoch of partition mdlpbr2Tgi-1 to 0 since the associated topicId changed from null to 8YE3X1rPTuGAm7cRTcjRiQ
+2024-12-07 00:30:23,403  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Cluster ID: IEXiwyT8RWujNSgK6mq9-w
+2024-12-07 00:30:23,405  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Discovered group coordinator 54.196.138.162:8080 (id: 2147483647 rack: null)
+2024-12-07 00:30:23,408  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:30:24,004  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: need to re-join with the given member-id: consumer-mdlpbr2-1-0d738052-0071-48fc-ab3a-024fe81e5d64
+2024-12-07 00:30:24,005  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: rebalance failed due to 'The group member needs to have a valid member id before actually entering a consumer group.' (MemberIdRequiredException)
+2024-12-07 00:30:24,006  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] (Re-)joining group
+2024-12-07 00:30:24,210  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully joined group with generation Generation{generationId=26, memberId='consumer-mdlpbr2-1-0d738052-0071-48fc-ab3a-024fe81e5d64', protocol='range'}
+2024-12-07 00:30:24,214  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Finished assignment for group at generation 26: {consumer-mdlpbr2-1-0d738052-0071-48fc-ab3a-024fe81e5d64=Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])}
+2024-12-07 00:30:24,345  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Successfully synced group in generation Generation{generationId=26, memberId='consumer-mdlpbr2-1-0d738052-0071-48fc-ab3a-024fe81e5d64', protocol='range'}
+2024-12-07 00:30:24,346  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Notifying assignor about the new Assignment(partitions=[mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2])
+2024-12-07 00:30:24,350  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Adding newly assigned partitions: mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
+2024-12-07 00:30:24,622  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-2 to the committed offset FetchPosition{offset=27, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
+2024-12-07 00:30:24,623  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-1 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
+2024-12-07 00:30:24,623  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Setting offset for partition mdlpbr2Tgi-0 to the committed offset FetchPosition{offset=23, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[54.196.138.162:8080 (id: 0 rack: null)], epoch=0}}
+2024-12-07 00:30:24,726  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions assigned: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
+2024-12-07 00:30:25,403  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 2
+2024-12-07 00:30:25,407  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=e1cbcb87-d7d2-4449-9985-870a9b5eaa4c, subject=teste de comunicação, payload=teste de comunicação ]
+2024-12-07 00:30:25,408  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message in partition 1
+2024-12-07 00:30:25,409  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] b.m.d.i.c.consumer.messageConsumer       : Received Message: TgiMessage[uniqueID=44a54295-36bb-4887-a039-b256270477f4, subject=teste de comunicação, payload=teste de comunicação ]
+2024-12-07 00:30:29,959  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Revoke previously assigned partitions mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2
+2024-12-07 00:30:29,960  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: partitions revoked: [mdlpbr2Tgi-0, mdlpbr2Tgi-1, mdlpbr2Tgi-2]
+2024-12-07 00:30:29,960  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Member consumer-mdlpbr2-1-0d738052-0071-48fc-ab3a-024fe81e5d64 sending LeaveGroup request to coordinator 54.196.138.162:8080 (id: 2147483647 rack: null) due to the consumer unsubscribed from all topics
+2024-12-07 00:30:29,961  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:30:29,961  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:30:29,961  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.clients.consumer.KafkaConsumer     : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Unsubscribed all topics or patterns and assigned partitions
+2024-12-07 00:30:29,962  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Resetting generation and member id due to: consumer pro-actively leaving the group
+2024-12-07 00:30:29,962  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-mdlpbr2-1, groupId=mdlpbr2] Request joining group due to: consumer pro-actively leaving the group
+2024-12-07 00:30:30,088  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2024-12-07 00:30:30,088  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-12-07 00:30:30,088  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2024-12-07 00:30:30,092  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-mdlpbr2-1 unregistered
+2024-12-07 00:30:30,093  INFO 173337 --- [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : mdlpbr2: Consumer stopped
